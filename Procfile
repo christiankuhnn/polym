@@ -1,1 +1,1 @@
-python polymarket_tracker.py
+worker: python polymarket_tracker.py
