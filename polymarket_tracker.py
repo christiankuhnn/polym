@@ -197,7 +197,7 @@ class PolymarketTracker:
             for item in items:
                 key = self.trade_key(item)
                 usdc_size = float(item.get("usdcSize") or 0)
-                if key not in seen_keys and usdc_size >= 100:
+                if key not in seen_keys and usdc_size >= 10:
                     new_items.append((int(item.get("timestamp") or 0), item))
                     seen_keys.add(key)
             new_items.sort(key=lambda x: x[0])
