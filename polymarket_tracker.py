@@ -196,8 +196,10 @@ class PolymarketTracker:
             new_items: List[Tuple[int, Dict[str, Any]]] = []
             for item in items:
                 key = self.trade_key(item)
-                usdc_size = float(item.get("usdcSize") or 0)
-                if key not in seen_keys and usdc_size >= 100:
+                usdc_value = item.get("usdcSize")
+                usdc_text = str(usdc_value).strip() if usdc_value is not None else ""
+                usdc_size = float(usdc_value or 0)
+                if key not in seen_keys and usdc_size >= 100 and usdc_text.isdigit():
                     new_items.append((int(item.get("timestamp") or 0), item))
                     seen_keys.add(key)
             new_items.sort(key=lambda x: x[0])
