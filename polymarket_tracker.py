@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 
 GAMMA_API = "https://gamma-api.polymarket.com"
 DATA_API = "https://data-api.polymarket.com"
-HANDLE_RE = re.compile(r"^@?[A-Za-z0-9_]{1,50}$")
+HANDLE_RE = re.compile(r"^@?[A-Za-z0-9_.]{1,50}$")
 ADDRESS_RE = re.compile(r"^0x[a-fA-F0-9]{40}$")
 
 
